@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My PomodoroApp</string>
+    <string name="app_icon_content_description">app icon</string>
+
+    <!--  POMODORO FRAGMENT  -->
+    <string name="pomodoro_description">Pomodoro is a way of manager your productive time with some time off to relax and then get back to focus. It works the folowing way: there will be 3 rounds of 40min, being 30min of focus and 10min to relax. During the focus time you won\'t receive any notifications or phone calls, because your phone will be switched to "Do not disturb" mode.</string>
+    <string name="start_pomodoro_btn_text">Start Pomodoro</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
