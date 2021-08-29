@@ -1,11 +1,11 @@
-package com.tab.mypomodoroapp.ui.splash
+package com.tab.mypomodoroapp.presentation.feature.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.tab.mypomodoroapp.R
-import com.tab.mypomodoroapp.ui.navigationAPI.NavigationAPIActivity
-import com.tab.mypomodoroapp.util.TimeHandler
+import com.tab.mypomodoroapp.framework.navigationAPI.NavigationAPIActivity
+import com.tab.mypomodoroapp.framework.util.TimeHandler
 
 class SplashActivity : AppCompatActivity(), SplashContract.SplashView {
 

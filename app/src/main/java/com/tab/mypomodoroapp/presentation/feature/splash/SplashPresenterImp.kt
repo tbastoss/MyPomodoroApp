@@ -1,7 +1,7 @@
-package com.tab.mypomodoroapp.ui.splash
+package com.tab.mypomodoroapp.presentation.feature.splash
 
 import android.util.Log
-import com.tab.mypomodoroapp.util.TimeHandler
+import com.tab.mypomodoroapp.framework.util.TimeHandler
 
 class SplashPresenterImp constructor(
     private val splashView: SplashContract.SplashView,

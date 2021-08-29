@@ -1,4 +1,4 @@
-package com.tab.mypomodoroapp.ui.splash
+package com.tab.mypomodoroapp.presentation.feature.splash
 
 interface SplashContract {
     interface SplachPresenter {

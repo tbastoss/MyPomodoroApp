@@ -1,4 +1,4 @@
-package com.tab.mypomodoroapp.ui.fragment.pomodoro
+package com.tab.mypomodoroapp.presentation.feature.fragment.pomodoro
 
 import android.app.NotificationManager
 import android.content.Context
@@ -11,8 +11,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 
 import com.tab.mypomodoroapp.R
-import com.tab.mypomodoroapp.ui.fragment.countdown.CountDownFragment
-import com.tab.mypomodoroapp.ui.navigationAPI.NavigationAPIContract
+import com.tab.mypomodoroapp.presentation.feature.fragment.countdown.CountDownFragment
+import com.tab.mypomodoroapp.framework.navigationAPI.NavigationAPIContract
 
 
 class PomodoroFragment : Fragment(),

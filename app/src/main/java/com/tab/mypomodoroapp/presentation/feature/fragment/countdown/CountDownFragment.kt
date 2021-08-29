@@ -1,4 +1,4 @@
-package com.tab.mypomodoroapp.ui.fragment.countdown
+package com.tab.mypomodoroapp.presentation.feature.fragment.countdown
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

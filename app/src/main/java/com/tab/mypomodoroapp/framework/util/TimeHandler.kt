@@ -1,4 +1,4 @@
-package com.tab.mypomodoroapp.util
+package com.tab.mypomodoroapp.framework.util
 
 import android.os.Handler
 
