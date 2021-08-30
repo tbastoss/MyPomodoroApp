@@ -1,4 +1,4 @@
-package com.tab.mypomodoroapp.ui.fragment.startPomodoro
+package com.tab.mypomodoroapp.presentation.feature.fragment.startPomodoro
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 
 import com.tab.mypomodoroapp.R
-import com.tab.mypomodoroapp.ui.navigationAPI.NavigationAPIContract
+import com.tab.mypomodoroapp.framework.navigationAPI.NavigationAPIContract
 
 /**
  * A simple [Fragment] subclass.

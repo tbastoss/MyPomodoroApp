@@ -1,7 +1,7 @@
-package com.tab.mypomodoroapp.ui.fragment.startPomodoro
+package com.tab.mypomodoroapp.presentation.feature.fragment.startPomodoro
 
-import com.tab.mypomodoroapp.ui.fragment.pomodoro.PomodoroFragment
-import com.tab.mypomodoroapp.ui.navigationAPI.NavigationAPIContract
+import com.tab.mypomodoroapp.presentation.feature.fragment.pomodoro.PomodoroFragment
+import com.tab.mypomodoroapp.framework.navigationAPI.NavigationAPIContract
 
 class StartPomodoroPresenter (
     private val view: StartPomodoroContract.StartPomodoroView

@@ -1,6 +1,6 @@
-package com.tab.mypomodoroapp.ui.fragment.pomodoro
+package com.tab.mypomodoroapp.presentation.feature.fragment.pomodoro
 
-import com.tab.mypomodoroapp.ui.fragment.countdown.CountDownFragment
+import com.tab.mypomodoroapp.presentation.feature.fragment.countdown.CountDownFragment
 
 interface PomodoroContract {
     interface ṔomodoroPresenter {

@@ -1,30 +1,33 @@
-package com.tab.mypomodoroapp.ui.fragment.pomodoro
+package com.tab.mypomodoroapp.framework.navigationAPI
 
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
-import androidx.core.content.ContextCompat.startActivity
-import com.tab.mypomodoroapp.ui.fragment.countdown.CountDownFragment
-import com.tab.mypomodoroapp.ui.navigationAPI.NavigationAPIContract
+import android.util.Log
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 
-class PomodoroPresenter(
-    private val view: NavigationAPIContract.NavigationAPIView,
-    private val pomodoroView: PomodoroContract.PomodoroView,
+const val TAG: String = "NavigationAPIPresenter"
+
+class NavigationAPIPresenterImp constructor(
     private val context: Context,
+    private val inticialScreenView: NavigationAPIContract.NavigationAPIView,
     private val notificationManager: NotificationManager
+) : NavigationAPIContract.NavigationAPIPersenter {
 
-) : PomodoroContract.ṔomodoroPresenter {
-    override fun loadPomodoroElements(countDownFragment: CountDownFragment) {
-        view.changeFragment(countDownFragment)
+
+
+    override fun updateView(fragment: Fragment) {
+        inticialScreenView.changeFragment(fragment)
     }
 
-    override fun setDonNotDisturbOn() {
+    override fun turnOffDoNotDisturb() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             changeInterruptionFiler()
         } else {
-            pomodoroView.alertNotAllowedToTurnOnDonNotDisturb()
+            Log.d(TAG, "turnOffDoNotDisturb Error: SDK < 23")
         }
     }
 
@@ -64,7 +67,7 @@ class PomodoroPresenter(
 
                 // Set the interruption filter
                 notificationManager.setInterruptionFilter(
-                    NotificationManager.INTERRUPTION_FILTER_NONE);
+                    NotificationManager.INTERRUPTION_FILTER_ALL);
             } else {
                 /*
                     String ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS
@@ -77,7 +80,7 @@ class PomodoroPresenter(
                 */
                 // If notification policy access not granted for this package
                 val intent = Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS)
-                startActivity(context, intent, null)
+                ContextCompat.startActivity(context, intent, null)
             }
         }
     }

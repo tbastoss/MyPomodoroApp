@@ -1,4 +1,4 @@
-package com.tab.mypomodoroapp.ui.navigationAPI
+package com.tab.mypomodoroapp.framework.navigationAPI
 
 import android.app.NotificationManager
 import android.content.Context
@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
 import com.tab.mypomodoroapp.R
-import com.tab.mypomodoroapp.ui.fragment.startPomodoro.StartPomodoroFragment
+import com.tab.mypomodoroapp.presentation.feature.fragment.startPomodoro.StartPomodoroFragment
 
 class NavigationAPIActivity : FragmentActivity(), NavigationAPIContract.NavigationAPIView {
 

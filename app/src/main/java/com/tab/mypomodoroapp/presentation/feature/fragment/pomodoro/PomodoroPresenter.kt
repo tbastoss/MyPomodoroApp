@@ -1,33 +1,30 @@
-package com.tab.mypomodoroapp.ui.navigationAPI
+package com.tab.mypomodoroapp.presentation.feature.fragment.pomodoro
 
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
-import android.util.Log
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat.startActivity
+import com.tab.mypomodoroapp.presentation.feature.fragment.countdown.CountDownFragment
+import com.tab.mypomodoroapp.framework.navigationAPI.NavigationAPIContract
 
-const val TAG: String = "NavigationAPIPresenter"
-
-class NavigationAPIPresenterImp constructor(
+class PomodoroPresenter(
+    private val view: NavigationAPIContract.NavigationAPIView,
+    private val pomodoroView: PomodoroContract.PomodoroView,
     private val context: Context,
-    private val inticialScreenView: NavigationAPIContract.NavigationAPIView,
     private val notificationManager: NotificationManager
-) : NavigationAPIContract.NavigationAPIPersenter {
 
-
-
-    override fun updateView(fragment: Fragment) {
-        inticialScreenView.changeFragment(fragment)
+) : PomodoroContract.ṔomodoroPresenter {
+    override fun loadPomodoroElements(countDownFragment: CountDownFragment) {
+        view.changeFragment(countDownFragment)
     }
 
-    override fun turnOffDoNotDisturb() {
+    override fun setDonNotDisturbOn() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             changeInterruptionFiler()
         } else {
-            Log.d(TAG, "turnOffDoNotDisturb Error: SDK < 23")
+            pomodoroView.alertNotAllowedToTurnOnDonNotDisturb()
         }
     }
 
@@ -67,7 +64,7 @@ class NavigationAPIPresenterImp constructor(
 
                 // Set the interruption filter
                 notificationManager.setInterruptionFilter(
-                    NotificationManager.INTERRUPTION_FILTER_ALL);
+                    NotificationManager.INTERRUPTION_FILTER_NONE);
             } else {
                 /*
                     String ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS
@@ -80,7 +77,7 @@ class NavigationAPIPresenterImp constructor(
                 */
                 // If notification policy access not granted for this package
                 val intent = Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS)
-                ContextCompat.startActivity(context, intent, null)
+                startActivity(context, intent, null)
             }
         }
     }
